@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+
+:root {
+  --color-green: #50fa7b;
+  --color-purple: #7159c1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #282a36;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+}
+
+header {
+  padding: 32px;
+  border-bottom: 1px solid #333;
+  background: rgb(0, 0, 0, 0.1);
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 16px;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--color-green);
+  transition: color 200ms;
+}
+
+a.active-tab {
+  color: var(--color-green);
+}
+
+#wrapper {
+  text-align: center;
+  padding: 32px;
+}
+
+#wrapper img {
+  max-width: 250px;
+  border-radius: 50%;
+  border: 3px solid var(--color-green);
+  margin-bottom: 32px;
+}
+
+#wrapper h1 {
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: bold;
+}
+
+#wrapper h2 {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: normal;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+#wrapper p {
+  max-width: 500px;
+  margin: 32px auto;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+#wrapper h2 a {
+  color: var(--color-green);
+}
+
+.footer-links a {
+  border-bottom: 1px solid var(--color-green);
+}
+
+/* ================================== CARDS ==================================== */
+
+.cards {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--color-purple);
+}
+
+.card__image-container img {
+  width: 100%;
+}
+
+.card__content,
+.card__info {
+  padding: 24px;
+}
