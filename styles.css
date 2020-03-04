@@ -93,6 +93,12 @@ a.active-tab {
   margin: 0 auto;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
 .card {
   background-color: var(--color-purple);
 }
@@ -104,4 +110,52 @@ a.active-tab {
 .card__content,
 .card__info {
   padding: 24px;
+}
+
+.card__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card__price {
+  background-color: var(--color-purple);
+  filter: brightness(90%);
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* ============================== MODAL OVERLAY ==============================*/
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  background-color: white;
+  height: 90%;
+  width: 90%;
+  margin: 5vh auto;
+  position: relative;
+}
+
+.modal .close-modal {
+  color: black;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+/* ============================== MODAL ACTIVE ==============================*/
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
