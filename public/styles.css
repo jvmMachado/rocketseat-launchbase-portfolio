@@ -102,6 +102,12 @@ a.active-tab {
 .card {
   background-color: var(--color-purple);
   border-radius: 10px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.07) translateZ(0);
 }
 
 .card__image-container {

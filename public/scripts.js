@@ -28,3 +28,10 @@ document.addEventListener('click', e => {
     iframe.src = '';
   }
 });
+
+////// Active tab controller ///////
+
+if (document.title === 'Portfolio - jvmMachado') {
+  document.querySelector('.about-link').classList.remove('active-tab');
+  document.querySelector('.portfolio-link').classList.add('active-tab');
+}
