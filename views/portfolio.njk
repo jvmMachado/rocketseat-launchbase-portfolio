@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
   <title>Portfolio - jvmMachado</title>
@@ -14,98 +14,34 @@
   </div>
 
   <section class="cards">
-    <div class="card">
-      <div class="card__image-container" id="vqrjFnq3-uo">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/vqrjFnq3-uo/maxresdefault.jpg" alt="Aula Criando Player de Áudio"/>
-      </div>
-      <div class="card__content">
-        <p>Formulário animado com JS puro e CSS Animation | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-container" id="2alg7MQ6_sI">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/2alg7MQ6_sI/maxresdefault.jpg" alt="Aula Git e GitHub na prática"/>
-      </div>
-      <div class="card__content">
-        <p>Git e GitHub na prática | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+    {% for item in items %}
 
-    <div class="card">
-      <div class="card__image-container" id="GSqR2i-Pq6o">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/GSqR2i-Pq6o/maxresdefault.jpg" alt="Aula Desvendando a variável THIS"/>
-      </div>
-      <div class="card__content">
-        <p>Desvendando a variável THIS | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+      <div class="card">
+        <div class="card__image-container" id="{{item.id}}">
+          <i class="material-icons">
+            play_circle_outline
+          </i ><img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}"/>
 
-    <div class="card">
-      <div class="card__image-container" id="HN1UjzRSdBk">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/HN1UjzRSdBk/maxresdefault.jpg" alt="Aula Desvendando o CSS Grid na prática"/>
-      </div>
-      <div class="card__content">
-        <p>Desvendando o CSS Grid na prática | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+          {% if item.featured %}
+            <div class="featured">Featured</div>
+          {% endif %}
 
-    <div class="card">
-      <div class="card__image-container" id="ghTrp1x_1As">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/ghTrp1x_1As/maxresdefault.jpg" alt="Aula O que é API? REST e RESTful?"/>
+        </div>
+        <div class="card__content">
+          <p>{{item.title}}</p>
+        </div>
+        <div class="card__info">
+          <p>{{item.duration}}</p>
+          <p class="card__price">{{item.price}}</p>
+        </div>
       </div>
-      <div class="card__content">
-        <p>O que é API? REST e RESTful? | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card__image-container" id="rAzHvYnQ8DY">
-        <i class="material-icons">
-          play_circle_outline
-        </i ><img src="https://img.youtube.com/vi/rAzHvYnQ8DY/maxresdefault.jpg" alt="Aula Array: High Order Functions"/>
-      </div>
-      <div class="card__content">
-        <p>Array: High Order Functions | Mayk Brito</p>
-      </div>
-      <div class="card__info">
-        <p>57 min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+    {% endfor %}
+
   </section>
 
-  <div class="modal-overlay">
+  {# <div class="modal-overlay">
     <div class="modal">
       <a class="close-modal">
         <i class="material-icons">close</i>
@@ -115,7 +51,8 @@
         <iframe src="" frameborder="0"></iframe>
       </div>
     </div>
-  </div>
+  </div> #}
+
   <script src="scripts.js"></script>
 
 {% endblock %}
